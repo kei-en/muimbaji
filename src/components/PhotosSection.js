@@ -1,26 +1,42 @@
 import React from "react";
-import photo1 from '../img/nicolas-lobos-ojE3yyWz27s-unsplash.jpg';
-import photo2 from '../img/woody-kelly-uQcWUXFALww-unsplash.jpg';
-import photo3 from '../img/austin-neill-hgO1wFPXl3I-unsplash.jpg';
-import photo4 from '../img/jakayla-toney-2NBLAuuGVFo-unsplash.jpg';
-import photo5 from '../img/ehimetalor-akhere-unuabona-5vpILdhPDHA-unsplash.jpg';
-import photo6 from '../img/erik-mclean-9y1cTVKe1IY-unsplash.jpg';
+import ImageSlider from "./ImageSlider";
+import styled from "styled-components";
 
+const slides = [
+    { url: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/6.jpg', title: 'something'},
+    { url: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/3.jpg', title: 'something'},
+    { url: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/4.jpg', title: 'something'},
+    { url: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/5.jpg', title: 'something'},
+    { url: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/1.jpg', title: 'something'},
+    { url: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/2.jpg', title: 'something'},
+]
 
 const PhotosSection = () => {
     return (
-        <div>
+        <GalleryStyle>
             <h2>featured photos</h2>
-            <div className="carousel">
-                <img src={photo1} alt="people" />
-                <img src={photo2} alt="people" />
-                <img src={photo3} alt="people" />
-                <img src={photo4} alt="people" />
-                <img src={photo5} alt="people" />
-                <img src={photo6} alt="people" />
-            </div>
-        </div>
+            <PhotosContainer>
+                <ImageSlider slides={slides} />
+            </PhotosContainer>  
+        </GalleryStyle>
     )
-}
+};
+
+//Styles
+const GalleryStyle = styled.div`
+    padding: 2rem 10rem;
+    color: white;
+    background: black;
+    h2 {
+        text-align: center;
+        padding: 1rem;
+    }
+`
+
+const PhotosContainer = styled.div`
+    width: "500px",
+    height: "280px",
+    margin: "0 auto",  
+`;
 
 export default PhotosSection;

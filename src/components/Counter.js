@@ -30,12 +30,7 @@ const ExpiredNotice = () => {
 const ShowCounter = ({ days, hours, minutes, seconds }) => {
     return (
         <CounterStyle>
-            <a
-                href="https://tapasadhikary.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="countdown-link"
-            >
+            <div className="countdown-link">
                 <DateTimeDisplay value={days} type='Days' isDanger={days<=3} />
                 <p>:</p>
                 <DateTimeDisplay value={hours} type='Hours' isDanger={false} />
@@ -43,7 +38,7 @@ const ShowCounter = ({ days, hours, minutes, seconds }) => {
                 <DateTimeDisplay value={minutes} type='Minutes' isDanger={false} />
                 <p>:</p>
                 <DateTimeDisplay value={seconds} type='Seconds' isDanger={false} />
-            </a>
+            </div>
         </CounterStyle>
     )
 };
@@ -60,17 +55,17 @@ const DateTimeDisplay = ({ value, type, isDanger}) => {
 //Styles
 const Expired = styled.div`
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     border: 1px solid #ebebeb;
     border-radius: 0.25rem;
     margin: 0.5rem;
     span {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     font-weight: bold;
     color: red;
     }
     p {
-        font-size: 1.5rem;
+        font-size: 0.5rem;
     }
 `;
 const CounterStyle = styled.div`
@@ -81,17 +76,17 @@ const CounterStyle = styled.div`
         justify-content: center;
         align-items: center;
         font-weight: 700;
-        font-size: 1.25rem;
-        line-height: 1.75rem;
-        padding: 0.5rem;
+        font-size: 1rem;
+        line-height: 1rem;
+        padding: 0.2rem;
         border: 1px solid #ebebeb;
         border-radius: 0.25rem;
         text-decoration: none;
-        color: #000;
+        color: #fff;
     }
     .countdown {
-        line-height: 1.25rem;
-        padding: 0 0.75rem 0 0.75rem;
+        line-height: 1rem;
+        padding: 0 0.1rem 0 0.1rem;
         align-items: center;
         display: flex;
         flex-direction: column;
@@ -104,8 +99,8 @@ const CounterStyle = styled.div`
     }
     .countdown > span {
         text-transform: uppercase;
-        font-size: 0.75rem;
-        line-height: 1rem;
+        font-size: 0.5rem;
+        line-height: .5rem;
     }
 `;
 

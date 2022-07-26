@@ -82,8 +82,8 @@ const Releases = styled.div`
 
 const Release = styled.div`
     img {
-        height: 15rem;
-        width: 15rem;
+        height: 20rem;
+        width: 20rem;
         object-fit: cover;
     }
     p {
@@ -105,8 +105,8 @@ const Releases2 = styled.div`
 `;
 
 const Release2 = styled.div`
-    width: 10rem;
-    height: 10rem;
+    width: 12rem;
+    height: 12rem;
     padding: 1rem;
     position: relative;
     img {

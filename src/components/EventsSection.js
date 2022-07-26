@@ -1,44 +1,104 @@
-import React, { useState } from "react";
 import styled from "styled-components";
 import moment from "moment";
 import Counter from "./Counter";
+// import { events } from "../data";
 
 const EventsSection = () => {
-    const eventDate = new Date(2022, 6, 30);
-    const formattedDate = moment(eventDate).format('MMM Do YY')
-    const daysInBetween = eventDate.getTime();
+    const event1 = new Date(2022, 6, 30);
+    const formattedDate1 = moment(event1).format('MMM Do YY')
+    const daysInBetween1 = event1.getTime();
+
+    const event2 = new Date(2022, 7, 3);
+    const formattedDate2 = moment(event2).format('MMM Do YY')
+    const daysInBetween2 = event2.getTime();
+
+    const event3 = new Date(2022, 7, 10);
+    const formattedDate3 = moment(event3).format('MMM Do YY')
+    const daysInBetween3 = event3.getTime();
     
     return (
-        <div>
+        <EventsOuter>
             <h2>upcoming events</h2>
-            <div className="events">
-                <div className="event">
+            <Events>
+                <Event>
                     <div className="date">
-                        <h3>{formattedDate}</h3>
+                        <h3>{formattedDate1}</h3>
                     </div>
                     <p>Centrum scene, nairobi</p>
                     <button>Get tickets</button>
-                    <Counter targetDate={daysInBetween} />
-                </div>
-                <div className="event">
+                    <Counter targetDate={daysInBetween1} />
+                    <Line />
+                </Event>
+                <Event>
                     <div className="date">
-                        {/* <h3>{setDate(new Date(2022, 10, 15))}</h3> */}
+                        <h3>{formattedDate2}</h3>
                     </div>
                     <p>Carnivore grounds, nairobi</p>
                     <button>Get tickets</button>
-                    <p>Happening soon!</p>
-                </div>
-                <div className="event">
+                    <Counter targetDate={daysInBetween2} />
+                    <Line />
+                </Event>
+                <Event>
                     <div className="date">
-                        {/* <h3>{setDate(new Date(2022, 10, 20))}</h3> */}
+                        <h3>{formattedDate3}</h3>
                     </div>
                     <p>Splash scene (opening act), nairobi</p>
                     <button>Get tickets</button>
-                    <p>Happening soon!</p>
-                </div>
-            </div>
-        </div>
+                    <Counter targetDate={daysInBetween3} />
+                    <Line />
+                </Event>
+            </Events>
+        </EventsOuter>
     )
 };
+
+//Styles
+const EventsOuter = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: black;
+  color: white;
+  padding: 2rem 0rem;
+  h2 {
+    padding: 2rem;
+  }
+`;
+const Events = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 3rem;
+
+`;
+const Event = styled.div`
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    padding: 1rem 0rem;
+    p {
+        flex: 3;
+        font-size: 1.1rem;
+        padding: .5rem;
+        text-transform: uppercase;
+    }
+    button {
+        margin: 5px;
+        border: none;
+        background: #45C4B0;
+        transition: all 0.5s ease;
+        &:hover {
+            background: transparent;
+            border: 1px solid #fff;
+        }
+    }
+`;
+const Line = styled.div`
+    width: 100%;
+    height: 1px;
+    background: white;
+    position: absolute;
+    bottom: 0;
+`;
 
 export default EventsSection;

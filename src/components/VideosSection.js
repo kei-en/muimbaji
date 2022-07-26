@@ -46,7 +46,7 @@ const VideosContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 80vh;
+    min-height: 90vh;
     h2 {
         padding: 2rem 0rem;
     }
@@ -58,6 +58,7 @@ const Video = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     z-index: 2;    
 `;
 const Hidden = styled.div`

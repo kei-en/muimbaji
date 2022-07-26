@@ -8,9 +8,6 @@ const GlobalStyle = createGlobalStyle`
     }
 
     html {
-        @media (max-width: 1700px) {
-            font-size: 75%;
-        }
     }
 
     body {
@@ -21,11 +18,19 @@ const GlobalStyle = createGlobalStyle`
         text-transform: uppercase;
     }
 
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
     button {
         text-transform: uppercase;
         font-size: .9rem;
         cursor: pointer;
-        padding: 1rem 2rem;
+        padding: .8rem 1.5rem;
         border: 1.5px solid #fff;
         background: transparent;
         color: white;
@@ -33,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
         transition: 0.3s ease-in-out;
         
         &:hover {
-            background-color: #23cdd9;
+            background-color: #45C4B0;
             color: white;
             border: none;
         }

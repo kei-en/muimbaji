@@ -27,7 +27,7 @@ const About = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem 5rem;
+    padding: 1rem 10rem;
     background: #000;
     color: white;
     h2 {
@@ -35,6 +35,7 @@ const About = styled.div`
     }
     p {
         padding: 2rem;
+        font-size: 1.1rem;
     }
     img {
         width: 30px;
