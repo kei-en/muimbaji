@@ -17,6 +17,13 @@ const AboutSection = () => {
                 stop making the goddamn funeral pyres and jumping in the middle of them. 
                 We pick up a few more people that remember, every generation.
             </p>
+            <p>And when the war’s over, some day, some year, the books can be written again, 
+                the people will be called in, one by one, to recite what they know and we’ll 
+                set it up in type until another Dark Age, when we might have to do the whole 
+                damn thing over again. But that’s the wonderful thing about man; he never gets 
+                so discouraged or disgusted that he gives up doing it all over again, because 
+                he knows very well it is important and worth the doing.
+            </p>
             <img src={logo} alt="logo" />
         </About>
     )
@@ -36,6 +43,7 @@ const About = styled.div`
     p {
         padding: 2rem;
         font-size: 1.1rem;
+        text-align: center;
     }
     img {
         width: 30px;
