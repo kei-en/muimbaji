@@ -6,9 +6,9 @@ import Song from "./Song";
 
 const Player = ({audioRef, isPlaying, setIsPlaying, setSongInfo, songInfo, songs, setCurrentSong, currentSong, setSongs}) => {
     //Volume
-    const [volume, setVolume] = useState(1);
-    const [muted, setMuted] = useState(false);
-    const finalVolume = muted ? 0 : volume ** 2;
+    const setVolume = (value) => {
+        audioRef.current.volume = value / 100;
+    }
     
     const activeLibraryHandler = (nextPrev) => {
         const newSongs = songs.map((song) => {
@@ -91,15 +91,15 @@ const Player = ({audioRef, isPlaying, setIsPlaying, setSongInfo, songInfo, songs
                     <p>{songInfo.duration ? getTime(songInfo.duration) : '0:00'}</p>
             </TimeControl>
             <StyledVolume>
-                <button onClick={() => setMuted(m => !m)}>
+                {/* <button onClick={() => setMuted(m => !m)}>
                     {muted ? "muted" : "unmuted"}
-                </button>
+                </button> */}
                 <input 
                     type="range" 
-                    value={volume}
-                    onChange={ e => {
-                        setVolume(e.target.valueAsNumber)
-                    }}
+                    min="0"
+                    max="100"
+                    step="1"
+                    onChange={e => setVolume(e.target.value)}
                 />
             </StyledVolume>
         </StyledPlayer>
