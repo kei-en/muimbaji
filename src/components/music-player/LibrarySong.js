@@ -46,7 +46,7 @@ const StyledLibrarySong = styled.div`
         width: 3rem;
     }
     &:hover {
-        background: rgb(222, 222, 255);
+        opacity: 0.9;
     }
 `;
 const SongDescription = styled.div`
