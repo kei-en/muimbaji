@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Music from "./pages/Music";
 import { useState, useRef } from "react";
 import Player from "./components/music-player/Player";
+import Media from "./pages/Media";
 
 function App() {
   const location = useLocation();
@@ -55,6 +56,7 @@ function App() {
           setSongs={setSongs}
           currentSong={currentSong} />} 
         />
+        <Route path="media" element={<Media />} />
       </Routes>
       <Player
         audioRef={audioRef}

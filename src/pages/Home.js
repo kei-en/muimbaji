@@ -6,12 +6,12 @@ import AboutSection from "../components/AboutSection";
 import EventsSection from "../components/EventsSection";
 import PhotosSection from "../components/PhotosSection";
 
-const Home = () => {
+const Home = ({videoRef}) => {
     return (
         <>
             <MainHeader />
             <LatestReleases />
-            <VideosSection />
+            <VideosSection videoRef={videoRef}/>
             <AboutSection />
             <EventsSection />
             <PhotosSection />

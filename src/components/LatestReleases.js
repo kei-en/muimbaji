@@ -96,6 +96,9 @@ const Release = styled.div`
 
 const Releases2Container = styled.div`
     padding: 0.5rem 2rem;
+    h3 {
+        text-transform: uppercase;
+    }
 `;
 
 const Releases2 = styled.div`

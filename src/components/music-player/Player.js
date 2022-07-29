@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay, faStepBackward, faStepForward, faPause } from "@fortawesome/free-solid-svg-icons";
+import { faPlay, faStepBackward, faStepForward, faPause, faVolumeHigh, faVolumeXmark } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import Song from "./Song";
 
 const Player = ({audioRef, isPlaying, setIsPlaying, setSongInfo, songInfo, songs, setCurrentSong, currentSong, setSongs}) => {    
     //Volume
+    const [isMute, setIsMute] = useState(false);
+    const mute = () => {
+        setIsMute(!isMute);
+        audioRef.current.volume = 0;
+    }
     const setVolume = (value) => {
-        audioRef.current.volume = value / 100;
+        if(!isMute) audioRef.current.volume = value / 100;
     }
     
     const activeLibraryHandler = (nextPrev) => {
@@ -91,14 +96,14 @@ const Player = ({audioRef, isPlaying, setIsPlaying, setSongInfo, songInfo, songs
                     <p>{songInfo.duration ? getTime(songInfo.duration) : '0:00'}</p>
             </TimeControl>
             <StyledVolume>
-                <p>volume</p>
-                    <input 
-                        type="range" 
-                        min="0"
-                        max="100"
-                        step="1"
-                        onChange={e => setVolume(e.target.value)}
-                    />
+                <FontAwesomeIcon onClick={mute} icon={isMute ? faVolumeXmark : faVolumeHigh} />               
+                <input 
+                    type="range" 
+                    min="0"
+                    max="100"
+                    step="1"
+                    onChange={e => setVolume(e.target.value)}
+                />
             </StyledVolume>
         </StyledPlayer>
     )

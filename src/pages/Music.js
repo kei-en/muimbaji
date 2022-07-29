@@ -1,10 +1,12 @@
 import React from "react";
+import styled from "styled-components";
 import Library from "../components/music-player/Library";
+import MusicSideBar from "../components/music-player/MusicSideBar";
 
-const Music = ({ songs, setCurrentSong, audioRef, isPlaying, setSongs, libraryStatus }) => {
+const Music = ({ songs, setCurrentSong, audioRef, isPlaying, setSongs, libraryStatus, currentSong }) => {
     
     return (
-        <div>
+        <StyledMusic>
             <Library
             setCurrentSong={setCurrentSong}
             audioRef={audioRef}
@@ -13,8 +15,15 @@ const Music = ({ songs, setCurrentSong, audioRef, isPlaying, setSongs, librarySt
             songs={songs}
             setSongs={setSongs}
             />
-        </div>
+            <MusicSideBar currentSong={currentSong}/>
+        </StyledMusic>
     )
 }
+
+//Styles
+const StyledMusic = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
 
 export default Music;

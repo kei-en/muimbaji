@@ -6,7 +6,7 @@ const Song = ({currentSong}) => {
         <SongContainer>
             <img alt={currentSong.name} src={currentSong.cover}></img>
             <SongDescription>                
-                <h2>{currentSong.name}</h2>
+                <h4>{currentSong.name}</h4>
                 <p>{currentSong.artist}</p>
             </SongDescription>
         </SongContainer>
@@ -28,10 +28,6 @@ const SongContainer = styled.div`
 const SongDescription = styled.div`
     padding: 10px;
     color: #f0f0f0;
-    h2 {
-        font-size: 100%;
-        text-transform: none;
-    }
     p {
         font-size: 80%;
     }

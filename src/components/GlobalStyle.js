@@ -28,18 +28,26 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         overflow-x: hidden;
+        font-family: 'Assistant', sans-serif;
     }
 
-    h1,h2,h3,h4 {
+    h1,h2 {
         text-transform: uppercase;
+        font-family: 'Roboto Condensed', sans-serif;
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     h3 {
+        font-family: 'Taviraj', serif;
         font-size: 1.5rem;
+    }
+
+    h4 {
+        font-family: 'Taviraj', serif;
+        font-size: 1rem;
     }
 
     button {
@@ -63,6 +71,10 @@ const GlobalStyle = createGlobalStyle`
     .selected {
         border: 0.8px solid #222;
         background: #3f3f3f;
+    }
+    .video-info-active {
+        transform: translateX(0%);
+        opacity: 1;
     }
 
 `;

@@ -27,12 +27,13 @@ const LibrarySong = ({ audioRef, song, songs, setCurrentSong, id, isPlaying, set
         <StyledLibrarySong onClick={songSelectHandler} className={`library-song ${song.active ? "selected" : ""}`}>
             <img alt={song.name} src={song.cover}></img>
             <SongDescription>
-                <h3>{song.name}</h3>
+                <h4>{song.name}</h4>
                 <p>{song.artist}</p>
             </SongDescription>
         </StyledLibrarySong>
     );
 };
+
 
 //Styles
 const StyledLibrarySong = styled.div`
@@ -52,10 +53,6 @@ const StyledLibrarySong = styled.div`
 const SongDescription = styled.div`
     padding: 10px;
     color: #f0f0f0;
-    h3 {
-        font-size: 100%;
-        text-transform: none;
-    }
     p {
         font-size: 80%;
     }
