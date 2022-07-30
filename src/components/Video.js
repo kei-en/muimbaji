@@ -4,7 +4,7 @@ import { faPause, faPlay, faVolumeHigh, faVolumeXmark } from "@fortawesome/free-
 import useVideoPlayer from "../hooks/useVideoPlayer";
 import styled from "styled-components";
 
-const Video = ({video}) => {
+const Video = ({currentVideo}) => {
     const videoElement = useRef(null);
     const {
         playerState,
@@ -15,40 +15,55 @@ const Video = ({video}) => {
     } = useVideoPlayer(videoElement);
     
     return (
-        <Container>
-            <VideoWrapper>
-                <video 
-                src={video}
-                ref={videoElement}
-                onTimeUpdate={handleOnTimeUpdate} 
-                />
-                <Controls className="controls">
-                    <Actions>
-                        <button onClick={togglePlay}>
-                            {!playerState.isPlaying ? (
-                                <FontAwesomeIcon className="icon" icon={faPlay} />
-                            ) : (
-                                <FontAwesomeIcon className="icon" icon={faPause} />
-                            )}
-                        </button>
-                    </Actions>
-                    <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value={playerState.progress}
-                    onChange={e => dragHandler(e)}
+        <>
+            <Container>
+                <VideoWrapper>
+                    <video 
+                    src={currentVideo.url}
+                    ref={videoElement}
+                    onTimeUpdate={handleOnTimeUpdate} 
                     />
-                    <MuteButton onClick={toggleMute}>
-                        {!playerState.isMuted ? (
-                            <FontAwesomeIcon className="icon" icon={faVolumeHigh} />
-                        ) : (
-                            <FontAwesomeIcon className="icon" icon={faVolumeXmark} />
-                        )}
-                    </MuteButton>
-                </Controls>
-            </VideoWrapper>
-        </Container>
+                    <Controls className="controls">
+                        <Actions>
+                            <button onClick={togglePlay}>
+                                {!playerState.isPlaying ? (
+                                    <FontAwesomeIcon className="icon" icon={faPlay} />
+                                ) : (
+                                    <FontAwesomeIcon className="icon" icon={faPause} />
+                                )}
+                            </button>
+                        </Actions>
+                        <input
+                        type="range"
+                        min="0"
+                        max="100"
+                        value={playerState.progress}
+                        onChange={e => dragHandler(e)}
+                        />
+                        <MuteButton onClick={toggleMute}>
+                            {!playerState.isMuted ? (
+                                <FontAwesomeIcon className="icon" icon={faVolumeHigh} />
+                            ) : (
+                                <FontAwesomeIcon className="icon" icon={faVolumeXmark} />
+                            )}
+                        </MuteButton>
+                    </Controls>
+                </VideoWrapper>
+            </Container>
+            <div className="details">
+                <h2>{currentVideo.name}</h2>
+                <h3>Label</h3>
+                <p>Darkhorse Whatever</p>
+                <h3>Written by</h3>
+                <p>{currentVideo.writer}</p>
+                <h3>Produced by</h3>
+                <p>{currentVideo.producer}</p>
+                <h3>Mixed by</h3>
+                <p>{currentVideo.mixer}</p>
+                <h3>What</h3>
+                <p>{currentVideo.what}</p>
+            </div>
+        </>
     )
 };
 
