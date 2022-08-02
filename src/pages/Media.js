@@ -139,7 +139,6 @@ const Slider = styled(SliderStyles)`
     z-index: 4;
     width: 100%;
     background: #131313e3;
-    transform: translateX(-100%);
     opacity: 0;
     transition: .5s all ease;
 `;
