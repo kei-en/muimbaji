@@ -28,6 +28,9 @@ const SongContainer = styled.div`
 const SongDescription = styled.div`
     padding: 10px;
     color: #f0f0f0;
+    h4 {
+        font-size: 90%;
+    }
     p {
         font-size: 80%;
     }

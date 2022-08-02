@@ -53,7 +53,7 @@ const VideosContainer = styled.div`
     button {
         margin: 2rem;
     }
-    `;
+`;
 const Video = styled.div`
     display: flex;
     flex-direction: column;

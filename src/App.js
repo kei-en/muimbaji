@@ -1,18 +1,21 @@
 import { Route, Routes, useLocation } from "react-router-dom";
+import { useState, useRef } from "react";
+import { chillHop, imageHop } from './data';
 import GlobalStyle from "./components/GlobalStyle";
-import data from './data';
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import Music from "./pages/Music";
-import { useState, useRef } from "react";
 import Player from "./components/music-player/Player";
 import Media from "./pages/Media";
 
 function App() {
   const location = useLocation();
   const audioRef = useRef(null);
-  //states
-  const [songs, setSongs] = useState(data());
+  // Images
+  const [images, setImages] = useState(imageHop);
+  const [currentImage, setCurrentImage] = useState(imageHop[0]);
+  //songs
+  const [songs, setSongs] = useState(chillHop);
   const [currentSong, setCurrentSong] = useState(songs[0]);
   const [isPlaying, setIsPlaying] = useState(false);
   const [songInfo, setSongInfo] = useState({
@@ -45,7 +48,11 @@ function App() {
       <GlobalStyle />
       <Nav />
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home 
+          currentImage={currentImage} 
+          setCurrentImage={setCurrentImage}
+          images={images}
+          setImages={setImages} />} />
         <Route 
         path="music" 
         element={<Music
@@ -56,7 +63,11 @@ function App() {
           setSongs={setSongs}
           currentSong={currentSong} />} 
         />
-        <Route path="media" element={<Media />} />
+        <Route path="media" element={<Media 
+          currentImage={currentImage} 
+          setCurrentImage={setCurrentImage}
+          images={images}
+          setImages={setImages} />} />
       </Routes>
       <Player
         audioRef={audioRef}

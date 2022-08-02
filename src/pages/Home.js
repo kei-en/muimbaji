@@ -6,7 +6,8 @@ import AboutSection from "../components/AboutSection";
 import EventsSection from "../components/EventsSection";
 import PhotosSection from "../components/PhotosSection";
 
-const Home = ({videoRef}) => {
+const Home = ({videoRef, setImages, images, setCurrentImage, currentImage}) => {
+
     return (
         <>
             <MainHeader />
@@ -14,7 +15,7 @@ const Home = ({videoRef}) => {
             <VideosSection videoRef={videoRef}/>
             <AboutSection />
             <EventsSection />
-            <PhotosSection />
+            <PhotosSection images={images} setImages={setImages} currentImage={currentImage} setCurrentImage={setCurrentImage} />
         </>
     )
 }

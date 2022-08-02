@@ -47,9 +47,8 @@ const Titles = styled.div`
 `;
 const StyledLibrary = styled.div`
     display: flex;
-    padding-top: 6rem;
+    padding: 6rem 4rem 2rem;
     flex-direction: column;
-    align-items: center;
     background: #222;
     color: #f0f0f0;
     width: 70%;

@@ -1,22 +1,20 @@
 import React from "react";
-import ImageSlider from "./ImageSlider";
 import styled from "styled-components";
+import { SliderStyles } from "../styles";
+import GallerySlider from "./GallerySlider";
 
-const slides = [
-    { url: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/6.jpg', title: 'something'},
-    { url: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/3.jpg', title: 'something'},
-    { url: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/4.jpg', title: 'something'},
-    { url: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/5.jpg', title: 'something'},
-    { url: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/1.jpg', title: 'something'},
-    { url: 'https://raw.githubusercontent.com/xiaolin/react-image-gallery/master/static/2.jpg', title: 'something'},
-]
-
-const PhotosSection = () => {
+const PhotosSection = ({ setImages, images, setCurrentImage, currentImage }) => {
     return (
         <GalleryStyle>
             <h2>featured photos</h2>
             <PhotosContainer>
-                <ImageSlider slides={slides} />
+                <GallerySlider
+                className="active" 
+                images={images} 
+                setImages={setImages} 
+                currentImage={currentImage} 
+                setCurrentImage={setCurrentImage}
+                id={currentImage.id} />
             </PhotosContainer>  
         </GalleryStyle>
     )
@@ -24,19 +22,24 @@ const PhotosSection = () => {
 
 //Styles
 const GalleryStyle = styled.div`
-    padding: 2rem 10rem;
+    padding: 2rem 2rem;
     color: white;
     background: black;
+    .active {
+        transform: translateX(0%);
+        opacity: 1;
+    }
     h2 {
         text-align: center;
         padding: 1rem;
     }
 `
 
-const PhotosContainer = styled.div`
-    width: "500px",
-    height: "280px",
-    margin: "0 auto",  
+const PhotosContainer = styled(SliderStyles)`
+    padding: 1rem 0rem;
+    button {
+        display: none;
+    }
 `;
 
 export default PhotosSection;

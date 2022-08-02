@@ -72,11 +72,10 @@ const GlobalStyle = createGlobalStyle`
         border: 0.8px solid #222;
         background: #3f3f3f;
     }
-    .video-info-active {
+    .video-active {
         transform: translateX(0%);
         opacity: 1;
     }
-
 `;
 
 
