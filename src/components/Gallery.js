@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
-const Gallery = ({ setImages, image, images, setCurrentImage, currentImage, id }) => {
+const Gallery = ({ setSliderStatus, setImages, image, images, setCurrentImage, currentImage, id }) => {
     const imageSelectHandler = async () => {
         const selectedImg = images.filter((state) => state.id === id)
         await setCurrentImage(selectedImg[0]);
+        setSliderStatus(true);
         //Active state
         const newImages = images.map(image => {
             if(image.id === id) {
@@ -23,7 +24,7 @@ const Gallery = ({ setImages, image, images, setCurrentImage, currentImage, id }
         
     return (
         <div onClick={imageSelectHandler} className="fullpage">             
-            <img src={image.link} alt="muimbaji" key={image.id} />
+            <img src={image} alt="muimbaji" key={image.id} />
         </div>
     )
 };

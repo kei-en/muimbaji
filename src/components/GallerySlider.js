@@ -43,10 +43,8 @@ const GallerySlider = ({ status, setStatus, images, setImages, currentImage, set
     };
 
     return (
-        <SliderStyle className={`${!status ? 'slider-active' : ''}`}>
-            <button onClick={() => {setStatus(false)}}>
-                <FontAwesomeIcon className="close" icon={faClose} />
-            </button> 
+        <SliderStyle /*className={`${!status ? 'slider-active' : ''}`}*/ >
+            
             <CurrentImage>
                 <LeftArrowStyle onClick={() => imageChangeHandler('prev')}>
                     ❰
@@ -72,8 +70,8 @@ const GallerySlider = ({ status, setStatus, images, setImages, currentImage, set
 
 //Styles
 const SliderStyle = styled(SliderStyles)`
-        transform: translateX(0%);
-        opacity: 1;
+
+    
 `;
 const CurrentImage = styled.div`
     width: 90%;
