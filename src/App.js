@@ -1,11 +1,11 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useState, useRef } from "react";
 import { chillHop, imageHop } from './data';
+import { AnimatePresence } from 'framer-motion';
 import GlobalStyle from "./components/GlobalStyle";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import Music from "./pages/Music";
-import Player from "./components/music-player/Player";
 import Media from "./pages/Media";
 
 function App() {
@@ -47,39 +47,33 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <Nav />
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home 
-          currentImage={currentImage} 
-          setCurrentImage={setCurrentImage}
-          images={images}
-          setImages={setImages} />} />
-        <Route 
-        path="music" 
-        element={<Music
-          songs={songs}
-          setCurrentSong={setCurrentSong}
-          audioRef={audioRef}
-          isPlaying={isPlaying}
-          setSongs={setSongs}
-          currentSong={currentSong} />} 
-        />
-        <Route path="media" element={<Media 
-          currentImage={currentImage} 
-          setCurrentImage={setCurrentImage}
-          images={images}
-          setImages={setImages} />} />
-      </Routes>
-      <Player
-        audioRef={audioRef}
-        currentSong={currentSong}
-        isPlaying={isPlaying}
-        setIsPlaying={setIsPlaying}
-        songInfo={songInfo}
-        setSongInfo={setSongInfo}
-        songs={songs}
-        setCurrentSong={setCurrentSong}
-        setSongs={setSongs} 
-      />
+      <AnimatePresence>        
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home 
+            currentImage={currentImage} 
+            setCurrentImage={setCurrentImage}
+            images={images}
+            setImages={setImages} />} />
+          <Route 
+          path="music" 
+          element={<Music
+            songs={songs}
+            setCurrentSong={setCurrentSong}
+            audioRef={audioRef}
+            isPlaying={isPlaying}
+            setSongs={setSongs}
+            currentSong={currentSong}
+            setIsPlaying={setIsPlaying}
+            songInfo={songInfo}
+            setSongInfo={setSongInfo} />} 
+          />
+          <Route path="media" element={<Media 
+            currentImage={currentImage} 
+            setCurrentImage={setCurrentImage}
+            images={images}
+            setImages={setImages} />} />
+        </Routes>
+      </AnimatePresence>
       <audio 
         onLoadedMetadata={timeUpdateHandler} 
         onTimeUpdate={timeUpdateHandler} 

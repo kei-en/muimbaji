@@ -47,11 +47,15 @@ const VideosContainer = styled.div`
     flex-direction: column;
     align-items: center;
     min-height: 90vh;
+    background: #000;
+    color: #fff;
     h2 {
         padding: 2rem 0rem;
     }
     button {
         margin: 2rem;
+        color: #000;
+        border-color: #000;
     }
 `;
 const Video = styled.div`
@@ -62,7 +66,7 @@ const Video = styled.div`
     z-index: 2;    
 `;
 const Hidden = styled.div`
-    background: #000;
+    background: #fff;
     position: absolute;
     width: 100%;
     height: 50%;

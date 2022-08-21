@@ -8,6 +8,8 @@ import { SliderStyles } from "../styles";
 import GallerySlider from '../components/GallerySlider';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
+import { pageAnimation } from "../animation";
 
 const Media = ({ currentImage, setCurrentImage, images, setImages }) => {   
     const [pageStatus, setPageStatus] = useState(true)
@@ -18,7 +20,7 @@ const Media = ({ currentImage, setCurrentImage, images, setImages }) => {
     const [sliderStatus, setSliderStatus] = useState(false);
     
     return(
-        <StyledMedia>            
+        <StyledMedia variants={pageAnimation} initial="hidden" animate="show" exit="exit">            
             <VideoComponent>
                 <div className={`video ${videoInfoStatus ? 'video-active' : ""}`}>                
                     <Video currentVideo={currentVideo} setStatus={setVideoInfoStatus}/>
@@ -78,16 +80,15 @@ const Media = ({ currentImage, setCurrentImage, images, setImages }) => {
 };
 
 //Styles 
-const StyledMedia = styled.div`
-    height: 100%;
+const StyledMedia = styled(motion.div)`
+    height: 100vh;
+    overflow: hidden;
     position: relative;
-    padding-bottom: 1rem;
     .inactive {
         display: none;
     }
 `;
 const Headers = styled.div`
-    padding-top: 5rem;
     display: inline-flex;
     .active {
         font-size: 3rem;
@@ -117,7 +118,7 @@ const VideoComponent = styled.div`
 `;
 const StyledVideo = styled.div`
     padding: 5rem 2rem;
-    height: 100vh;
+    height: 70vh;
     overflow: scroll;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px,1fr));
@@ -133,7 +134,7 @@ const Images = styled.div`
     grid-row-gap: 1rem;
     position: relative;
     padding: 1rem;
-    height: 100vh;
+    height: 70vh;
     overflow: scroll;
     img {
         width: 100%;

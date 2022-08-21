@@ -26,7 +26,6 @@ const EventsSection = () => {
                     </div>
                     <p>Centrum scene, nairobi</p>
                     <button>Get tickets</button>
-                    <Counter targetDate={daysInBetween1} />
                     <Line />
                 </Event>
                 <Event>
@@ -35,7 +34,6 @@ const EventsSection = () => {
                     </div>
                     <p>Carnivore grounds, nairobi</p>
                     <button>Get tickets</button>
-                    <Counter targetDate={daysInBetween2} />
                     <Line />
                 </Event>
                 <Event>
@@ -44,7 +42,6 @@ const EventsSection = () => {
                     </div>
                     <p>Splash scene (opening act), nairobi</p>
                     <button>Get tickets</button>
-                    <Counter targetDate={daysInBetween3} />
                     <Line />
                 </Event>
             </Events>
@@ -57,8 +54,7 @@ const EventsOuter = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: black;
-  color: white;
+  min-width: 500px;
   padding: 2rem 0rem;
   h2 {
     padding: 2rem;
@@ -89,7 +85,8 @@ const Event = styled.div`
         transition: all 0.5s ease;
         &:hover {
             background: transparent;
-            border: 1px solid #fff;
+            border: 1px solid #000;
+            color: #000;
         }
     }
 `;

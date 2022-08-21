@@ -8,3 +8,6 @@ export const SliderStyles = styled.div`
     align-items: center;
     position: relative;
 `;
+export const Hide = styled.div`
+  overflow: hidden;
+`;

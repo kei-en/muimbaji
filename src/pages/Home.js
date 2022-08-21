@@ -4,19 +4,24 @@ import MainHeader from "../components/MainHeader";
 import VideosSection from "../components/VideosSection";
 import AboutSection from "../components/AboutSection";
 import EventsSection from "../components/EventsSection";
-import PhotosSection from "../components/PhotosSection";
+import { motion } from 'framer-motion';
+import { pageAnimation } from "../animation";
 
-const Home = ({videoRef, setImages, images, setCurrentImage, currentImage}) => {
+const Home = ({videoRef}) => {
 
     return (
-        <>
+        <motion.div
+            variants={pageAnimation}
+            initial="hidden"
+            animate="show"
+            exit="exit"
+        >
             <MainHeader />
-            <LatestReleases />
-            <VideosSection videoRef={videoRef}/>
             <AboutSection />
+            <VideosSection videoRef={videoRef}/>
             <EventsSection />
-            <PhotosSection images={images} setImages={setImages} currentImage={currentImage} setCurrentImage={setCurrentImage} />
-        </>
+            <LatestReleases />
+        </motion.div>
     )
 }
 
