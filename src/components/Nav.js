@@ -3,35 +3,34 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import logo from '../img/fishbowl.png';
 import { RiCloseFill } from "react-icons/ri";
-import { FiMenu } from "react-icons/fi";
-import Headroom from "react-headroom";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 
 const Nav = () => {
     const [menuStatus, setMenuStatus] = useState(false);
     
     let activeStyle = {
-        color: "#DAFDBA",
+        color: "#A68D60",
         fontSize: "4rem",
-        borderBottom: "0.5rem solid #DAFDBA",
+        borderBottom: "0.5rem solid #A68D60",
         paddingLeft: "0.4em",
         transition: "0.5s ease"
     }
     
     return (
-        <NavContainer>       
+        <NavContainer >       
+            <button onClick={() => setMenuStatus(!menuStatus)}>
+                {(menuStatus && 
+                    <BsThreeDotsVertical />
+                    )    ||
+                    <RiCloseFill />
+                }
+            </button>
             <h1>
                 <NavLink to="/" id='logo'>
                     <img src={logo} alt="logo" />
                 </NavLink>
             </h1>
-            <button onClick={() => setMenuStatus(!menuStatus)}>
-                {menuStatus && (
-                    <FiMenu />
-                ) || (
-                    <RiCloseFill />
-                )}
-            </button>
             <NavStyled disableInlineStyles className={`${menuStatus ? "inactive" : ""}`}>
                 <ul>
                     <li>
@@ -58,37 +57,24 @@ const Nav = () => {
 };
 
 //Styles
-const NavContainer = styled(Headroom)`
+const NavContainer = styled.div`
+    display: flex;
     flex-direction: row;
-    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-    .headroom {
-        display: flex;
-        width: 100%;
-        max-height: 5rem;
-        justify-content: space-between;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1;
-    }
-    .headroom--unfixed {
-        position: relative;
-        transform: translateY(0);
-    }
-    .headroom--scrolled {
-        transition: transform 200ms ease-in-out;
-    }
-    .headroom--unpinned {
-        position: fixed;
-        transform: translateY(-100%);
-    }
-    .headroom--pinned {
-        position: fixed;
-        transform: translateY(0%);
+    background: linear-gradient(to right, rgba(0,0,0,0), rgba(85,37,50,0.85),rgba(0,0,0,0));;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4.5rem;
+    h1 {
+        margin-right: auto;
+        margin-left: auto;
+        width: auto;
     }
     img {
         max-height: 4rem;
-        padding: 0.5rem
+        padding: 0.5rem;
     }
     .inactive {
         display: none;
@@ -97,34 +83,36 @@ const NavContainer = styled(Headroom)`
         font-size: 2rem;
         border: none;
         text-align: center;
+        font-weight: bolder;
         margin: 1rem;
+        color: #A68D60;
         &:hover {
-            color: #DAFDBA;
+            color: #BFB6AE;
             background-color: inherit;
         }
     }
 `;
 const NavStyled = styled.div`
-    width: 100%;
+    width: 400px;
     height: 90vh;
     display: flex;
     flex-direction: row;
     margin: auto;
     justify-content: center;
     align-items: center;
-    padding: 1rem 15rem;
+    padding: 1rem 0rem;
     z-index: 10;
     position: fixed;
     top: 4rem;
-    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    background: linear-gradient(to right, rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%);
     a {
-        color: white;
+        color: #F2F2F2;
         text-decoration: none;
         font-size:3.5rem;
         &:hover {
-            color: #DAFDBA;
-            font-size: 4rem;
-            border-bottom: 0.2rem solid #DAFDBA;
+            color: #BFB6AE;
+            font-size: 3rem;
+            border-bottom: 0.2rem solid #BFB6AE;
             transition: 0.3s ease-in-out;
         }
     }
@@ -133,10 +121,6 @@ const NavStyled = styled.div`
         display: flex;
         flex-direction: column;
         min-width: 70%; 
-    }
-    li {
-        padding-left: 5rem;
-        position: relative;
     }
 `;
 

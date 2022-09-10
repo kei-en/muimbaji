@@ -41,7 +41,7 @@ const StyledLibrarySong = styled.div`
     align-items: center;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    background-color: #2c2c2c;
+    background-color: #262626;
     border-bottom: 0.1px solid #222;
     img {
         width: 3rem;

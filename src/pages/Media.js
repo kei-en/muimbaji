@@ -89,6 +89,7 @@ const StyledMedia = styled(motion.div)`
     }
 `;
 const Headers = styled.div`
+    padding-top: 2.8rem;
     display: inline-flex;
     .active {
         font-size: 3rem;

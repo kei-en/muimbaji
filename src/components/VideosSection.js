@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useRef } from "react";
 import ReactPlayer from "react-player";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const VideosSection = () => {
     const videoRef = useRef();
@@ -33,7 +34,7 @@ const VideosSection = () => {
                         config={{ file: { attributes: { controlsList: "nodownload" } } }}
                     />
                 </Fragment>
-                <button>more videos</button>
+                <Link to="/media">more videos</Link>
             </Video>
             <Hidden />
         </VideosContainer>
@@ -52,10 +53,21 @@ const VideosContainer = styled.div`
     h2 {
         padding: 2rem 0rem;
     }
-    button {
+    a {
+        text-transform: uppercase;
+        font-size: .9rem;
+        font-weight: 500;
+        text-decoration: none;
+        padding: .8rem 1.5rem;
         margin: 2rem;
         color: #000;
-        border-color: #000;
+        border: 1px solid #000;
+        transition: 0.3s ease-in-out;
+        &:hover {
+            background-color: #45C4B0;
+            color: white;
+            border: none;
+        }
     }
 `;
 const Video = styled.div`

@@ -41,7 +41,7 @@ const Library = ({ audioRef, songs, setCurrentSong, isPlaying, setSongs, library
 
 //Styles
 const Titles = styled.div`
-    background: #222;
+    background: #0D0D0D;
     color: #f0f0f0;
     padding: 8rem 2rem 0rem;
 `;
@@ -49,7 +49,7 @@ const StyledLibrary = styled.div`
     display: flex;
     padding: 6rem 4rem 2rem;
     flex-direction: column;
-    background: #222;
+    background: #0D0D0D;
     color: #f0f0f0;
     width: 70%;
     height: 90vh;
