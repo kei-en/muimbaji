@@ -60,7 +60,7 @@ const Nav = () => {
 const NavContainer = styled.div`
     display: flex;
     flex-direction: row;
-    background: linear-gradient(to right, rgba(0,0,0,0), rgba(85,37,50,0.85),rgba(0,0,0,0));;
+    background: linear-gradient(to right, rgba(0,0,0,0), rgba(35,35,35,0.85),rgba(0,0,0,0));;
     position: fixed;
     z-index: 10;
     top: 0;
