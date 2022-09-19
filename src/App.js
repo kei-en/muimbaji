@@ -1,6 +1,6 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useState, useRef } from "react";
-import { chillHop, imageHop } from './data';
+import { chillHop, imageHop, vidHop } from './data';
 import { AnimatePresence } from 'framer-motion';
 import GlobalStyle from "./components/GlobalStyle";
 import Nav from "./components/Nav";
@@ -23,6 +23,11 @@ function App() {
     duration: 0,
     animationPercentage: 0,
   });
+
+  //Video
+  const [videos, setVideos] = useState(vidHop);
+  const [currentVideo, setCurrentVideo] = useState(videos[0]);
+  
   const timeUpdateHandler = (e) => {
     const current = e.target.currentTime;
     const duration = e.target.duration;
@@ -53,7 +58,9 @@ function App() {
             currentImage={currentImage} 
             setCurrentImage={setCurrentImage}
             images={images}
-            setImages={setImages} />} />
+            setImages={setImages}
+            currentVideo={currentVideo}
+            videos={videos} />} />
           <Route 
           path="music" 
           element={<Music
@@ -71,7 +78,11 @@ function App() {
             currentImage={currentImage} 
             setCurrentImage={setCurrentImage}
             images={images}
-            setImages={setImages} />} />
+            setImages={setImages}
+            videos={videos} 
+            setVideos={setVideos}
+            setCurrentVideo={setCurrentVideo}
+            currentVideo={currentVideo} />} />
         </Routes>
       </AnimatePresence>
       <audio 

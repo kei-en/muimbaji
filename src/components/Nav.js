@@ -7,7 +7,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 
 
 const Nav = () => {
-    const [menuStatus, setMenuStatus] = useState(false);
+    const [menuStatus, setMenuStatus] = useState(true);
     
     let activeStyle = {
         color: "#A68D60",
@@ -47,8 +47,7 @@ const Nav = () => {
                         isActive ? activeStyle : undefined}>Media</NavLink>
                     </li>
                     <li>
-                        <NavLink to='shop' style={({ isActive }) =>
-                        isActive ? activeStyle : undefined}>Shop</NavLink>
+                        <a href="http://localhost:3001">Shop</a>
                     </li>
                 </ul>
             </NavStyled>
@@ -103,7 +102,7 @@ const NavStyled = styled.div`
     padding: 1rem 0rem;
     z-index: 10;
     position: fixed;
-    top: 4rem;
+    top: 4.5rem;
     background: linear-gradient(to right, rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%);
     a {
         color: #F2F2F2;

@@ -2,42 +2,21 @@ import React, { Fragment, useEffect, useRef } from "react";
 import ReactPlayer from "react-player";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import VideoPlayer from "./VideoPlayer";
 
-const VideosSection = () => {
-    const videoRef = useRef();
-
-    useEffect(() => {
-        videoRef.current.addEventListener(
-            "contextmenu",
-            (e) => e.preventDefault(),
-            false
-        );
-
-        return videoRef.current.removeEventListener(
-            "contextmenu",
-            (e) => e.preventDefault(),
-            false
-        );
-    }, []);
+const VideosSection = ({currentVideo, videos}) => {
     
     return (
-        <VideosContainer>
-            <h2>New Video</h2>
-            <Video>                
-                <Fragment>
-                    <div ref={videoRef}></div>
-                    <ReactPlayer 
-                        width='70%'
-                        height='70%'
-                        controls={true}
-                        url={"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"}
-                        config={{ file: { attributes: { controlsList: "nodownload" } } }}
-                    />
-                </Fragment>
-                <Link to="/media">more videos</Link>
-            </Video>
-            <Hidden />
-        </VideosContainer>
+        <>
+            <VideosContainer>
+                <h2>New Video</h2>
+                <Video>
+                    <VideoPlayer currentVideo={videos[0]} />
+                    <Link to="/media">more videos</Link>
+                </Video>
+                <Hidden />
+            </VideosContainer>
+        </>
     )
 };
 

@@ -7,7 +7,43 @@ const useVideoPlayer = (videoElement) => {
         progress: 0,
         speed: 1,
         isMuted: false,
+        fullscreen: false,
     });
+
+    const element = document.getElementById("videoElement");
+    
+    const toggleFullscreen = () => {
+        if(!playerState.fullscreen) {
+            if(element.requestFullscreen) {
+                element.requestFullscreen();
+            }
+            else if(element.webkitRequestFullscreen) {
+                element.webkitRequestFullscreen();
+            }
+            else if(element.msRequestFullscreen) {
+                element.msRequestFullscreen();
+            }
+            setPlayerState({
+                ...playerState,
+                fullscreen: true,
+            })
+        }
+        else {
+            if(document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+            else if(document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            }
+            else if(document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+            setPlayerState({
+                ...playerState,
+                fullscreen: false,
+            })
+        }
+    }
 
     const togglePlay = () => {
         setPlayerState({
@@ -36,10 +72,13 @@ const useVideoPlayer = (videoElement) => {
     }
 
     const toggleMute = () => {
-        setPlayerState({
-            ...playerState,
-            isMuted: !playerState.isMuted,
-        });
+        if(!playerState.isMuted) {
+            setPlayerState({
+                ...playerState,
+                isMuted: !playerState.isMuted,
+            });
+            videoElement.current.volume = 0;
+        }
     };
 
     return {
@@ -48,6 +87,7 @@ const useVideoPlayer = (videoElement) => {
         handleOnTimeUpdate,
         dragHandler,
         toggleMute,
+        toggleFullscreen,
     }
 };
 

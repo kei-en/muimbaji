@@ -7,7 +7,7 @@ import EventsSection from "../components/EventsSection";
 import { motion } from 'framer-motion';
 import { pageAnimation } from "../animation";
 
-const Home = ({videoRef}) => {
+const Home = ({videos, currentVideo}) => {
 
     return (
         <motion.div
@@ -18,7 +18,7 @@ const Home = ({videoRef}) => {
         >
             <MainHeader />
             <AboutSection />
-            <VideosSection videoRef={videoRef}/>
+            <VideosSection currentVideo={currentVideo} videos={videos} />
             <EventsSection />
             <LatestReleases />
         </motion.div>

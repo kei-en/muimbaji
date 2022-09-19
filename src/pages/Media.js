@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import { vidHop } from '../data'
 import styled from "styled-components";
 import VideoLibrary from "../components/VideoLibrary";
 import Video from "../components/Video";
@@ -11,11 +10,8 @@ import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import { pageAnimation } from "../animation";
 
-const Media = ({ currentImage, setCurrentImage, images, setImages }) => {   
+const Media = ({ videos, setVideos, currentVideo, setCurrentVideo, currentImage, setCurrentImage, images, setImages }) => {   
     const [pageStatus, setPageStatus] = useState(true)
-    //Video
-    const [videos, setVideos] = useState(vidHop);
-    const [currentVideo, setCurrentVideo] = useState(videos[0]);
     const [videoInfoStatus, setVideoInfoStatus] = useState(false);
     const [sliderStatus, setSliderStatus] = useState(false);
     
