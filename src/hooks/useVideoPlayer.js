@@ -72,13 +72,11 @@ const useVideoPlayer = (videoElement) => {
     }
 
     const toggleMute = () => {
-        if(!playerState.isMuted) {
-            setPlayerState({
-                ...playerState,
-                isMuted: !playerState.isMuted,
-            });
-            videoElement.current.volume = 0;
-        }
+        videoElement.current.volume = !videoElement.current.volume;
+        setPlayerState({
+            ...playerState,
+            isMuted: !playerState.isMuted,
+        });
     };
 
     return {

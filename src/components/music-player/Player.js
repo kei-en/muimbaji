@@ -9,7 +9,7 @@ const Player = ({audioRef, isPlaying, setIsPlaying, setSongInfo, songInfo, songs
     const [isMute, setIsMute] = useState(false);
     const mute = () => {
         setIsMute(!isMute);
-        audioRef.current.volume = 0;
+        audioRef.current.volume = !audioRef.current.volume;
     }
     const setVolume = (value) => {
         if(!isMute) audioRef.current.volume = value / 100;
