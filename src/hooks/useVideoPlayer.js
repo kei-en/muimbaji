@@ -76,7 +76,7 @@ const useVideoPlayer = (videoElement) => {
         });
     };
 
-    const dragHandler = e => {
+    const dragHandler = (e) => {
         videoElement.current.currentTime = e.target.value;
         setPlayerState({ 
             ...playerState,

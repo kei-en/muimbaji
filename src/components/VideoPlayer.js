@@ -118,22 +118,6 @@ const Controls = styled.div`
     border: 1px solid rgba(255, 255, 255, 0.18);
     transform: translateY(150%);
     transition: all 0.3s ease-in-out;
-    input[type="range"] {
-        -webkit-appearance: none !important;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 20px;
-        height: 4px;
-        width: 300px;
-    }
-    input[type="range"]::-webkit-slider-thumb {
-        -webkit-appearance: none !important;
-        cursor: pointer;
-        height: 6px;
-    }
-
-    input[type="range"]::-moz-range-progress {
-       background: white;
-    }
 `;
 const Actions = styled.div`
     button {
@@ -153,8 +137,25 @@ const TimeControl = styled.div`
     display: flex;
     p {
         padding: 0.5rem;
-        color: #f0f0f0;
-        font-size: 0.8rem;
+        color: #ffffff;
+        font-size: 0.9rem;
+    }
+    input {
+        width: 100%;
+        -webkit-appearance: none;
+        background: transparent;
+        cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+        width: 16px;
+        height: 16px;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        -webkit-appearance: none;
+        background: transparent;
+        border: none;
     }
 `;
 const Track = styled.div`
@@ -168,7 +169,7 @@ const Track = styled.div`
     align-self: center;
 `;
 const AnimateTrack = styled.div`
-    background: #333333;
+    background: #696666;
     width: 100%;
     height: 100%;
     position: absolute;

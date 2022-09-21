@@ -75,7 +75,7 @@ const SliderStyle = styled(SliderStyles)`
 `;
 const CurrentImage = styled.div`
     width: 90%;
-    height: 90vh;
+    height: 80vh;
     position: relative;
 `;
 const ImageBackground = styled.img`
