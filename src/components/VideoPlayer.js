@@ -15,14 +15,26 @@ function VideoPlayer({ currentVideo }) {
         toggleMute,
         toggleFullscreen,
     } = useVideoPlayer(videoElement);
+
+    const getTime = (time) => {
+        return(
+            Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
+        )
+    }
+
+    //Track animation styling
+    const animTrack = {
+        transform: `translate(${playerState.animationPercentage}%)`   
+    }
     
     return (
         <Container>
             <VideoWrapper id="videoElement">
                 <video 
+                onTimeUpdate={handleOnTimeUpdate}
+                onLoadedMetadata={handleOnTimeUpdate} 
                 src={currentVideo.url}
                 ref={videoElement}
-                onTimeUpdate={handleOnTimeUpdate} 
                 />
                 <Controls className="controls">
                     <Actions>
@@ -33,14 +45,21 @@ function VideoPlayer({ currentVideo }) {
                                 <FontAwesomeIcon className="icon" icon={faPause} />
                             )}
                         </button>
-                    </Actions>
-                    <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value={playerState.progress}
-                    onChange={e => dragHandler(e)}
-                    />
+                    </Actions>   
+                    <TimeControl>
+                        <p>{getTime(playerState.currentTime)}</p>
+                        <Track>
+                            <input 
+                                min={0} 
+                                max={playerState.duration || 0} 
+                                value={playerState.currentTime} 
+                                onChange={dragHandler} 
+                                type="range" 
+                            />
+                            <AnimateTrack style={animTrack}></AnimateTrack>
+                        </Track>
+                        <p>{playerState.duration ? getTime(playerState.duration) : '0:00'}</p>
+                    </TimeControl>
                     <MuteButton onClick={toggleMute}>
                         {!playerState.isMuted ? (
                             <FontAwesomeIcon className="icon" icon={faVolumeHigh} />
@@ -99,22 +118,6 @@ const Controls = styled.div`
     border: 1px solid rgba(255, 255, 255, 0.18);
     transform: translateY(150%);
     transition: all 0.3s ease-in-out;
-    input[type="range"] {
-        -webkit-appearance: none !important;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 20px;
-        height: 4px;
-        width: 300px;
-    }
-    input[type="range"]::-webkit-slider-thumb {
-        -webkit-appearance: none !important;
-        cursor: pointer;
-        height: 6px;
-    }
-
-    input[type="range"]::-moz-range-progress {
-       background: white;
-    }
 `;
 const Actions = styled.div`
     button {
@@ -128,6 +131,53 @@ const Actions = styled.div`
         color: white;
         font-size: 20px;
     }
+`;
+const TimeControl = styled.div`
+    width: 50%;
+    display: flex;
+    input {
+        width: 100%;
+        -webkit-appearance: none;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    p {
+        padding: 0.5rem;
+        color: #f0f0f0;
+        font-size: 0.8rem;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+        width: 16px;
+        height: 16px;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        -webkit-appearance: none;
+        background: transparent;
+        border: none;
+    }
+`;
+const Track = styled.div`
+    background: #e2e2e2;
+    height: 0.8rem;
+    position: relative;
+    border: 0.1px solid rgba(240, 240, 240, 0.5);
+    border-radius: 3px;
+    overflow: hidden;
+    width: 100%;
+    align-self: center;
+`;
+const AnimateTrack = styled.div`
+    background: #333333;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(0%); 
+    pointer-events: none;
 `;
 const MuteButton = styled.button`
     background: none;

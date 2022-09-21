@@ -4,10 +4,12 @@ const useVideoPlayer = (videoElement) => {
     
     const [playerState, setPlayerState] = useState({
         isPlaying: false,
-        progress: 0,
         speed: 1,
         isMuted: false,
         fullscreen: false,
+        currentTime: 0,
+        duration: 0,
+        animationPercentage: 0,
     });
 
     const element = document.getElementById("videoElement");
@@ -59,16 +61,27 @@ const useVideoPlayer = (videoElement) => {
     }, [playerState.isPlaying, videoElement]);
 
     const handleOnTimeUpdate = (e) => {
-        const current = e.target.progress;
+        const current = e.target.currentTime;
+        const duration = e.target.duration;
+        //Calculate percentage
+        const roundedCurrent = Math.round(current);
+        const roundedDuration = Math.round(duration);
+        const animation = Math.round((roundedCurrent / roundedDuration) * 100);
+
         setPlayerState({
             ...playerState,
-            progress: current,
+            currentTime: current, 
+            duration,
+            animationPercentage: animation,
         });
     };
 
     const dragHandler = e => {
         videoElement.current.currentTime = e.target.value;
-        setPlayerState({ ...playerState, progress: e.target.value})
+        setPlayerState({ 
+            ...playerState,
+            currentTime: e.target.value,
+        })
     }
 
     const toggleMute = () => {
