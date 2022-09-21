@@ -31,10 +31,10 @@ function VideoPlayer({ currentVideo }) {
         <Container>
             <VideoWrapper id="videoElement">
                 <video 
-                onTimeUpdate={handleOnTimeUpdate}
-                onLoadedMetadata={handleOnTimeUpdate} 
                 src={currentVideo.url}
                 ref={videoElement}
+                onTimeUpdate={handleOnTimeUpdate}
+                onLoadedMetadata={handleOnTimeUpdate} 
                 />
                 <Controls className="controls">
                     <Actions>
@@ -118,6 +118,22 @@ const Controls = styled.div`
     border: 1px solid rgba(255, 255, 255, 0.18);
     transform: translateY(150%);
     transition: all 0.3s ease-in-out;
+    input[type="range"] {
+        -webkit-appearance: none !important;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        height: 4px;
+        width: 300px;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none !important;
+        cursor: pointer;
+        height: 6px;
+    }
+
+    input[type="range"]::-moz-range-progress {
+       background: white;
+    }
 `;
 const Actions = styled.div`
     button {
@@ -135,28 +151,10 @@ const Actions = styled.div`
 const TimeControl = styled.div`
     width: 50%;
     display: flex;
-    input {
-        width: 100%;
-        -webkit-appearance: none;
-        background: transparent;
-        cursor: pointer;
-    }
-
     p {
         padding: 0.5rem;
         color: #f0f0f0;
         font-size: 0.8rem;
-    }
-    input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-        width: 16px;
-        height: 16px;
-    }
-
-    input[type="range"]::-moz-range-thumb {
-        -webkit-appearance: none;
-        background: transparent;
-        border: none;
     }
 `;
 const Track = styled.div`

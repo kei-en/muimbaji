@@ -7,7 +7,8 @@ import VideoPlayer from "./VideoPlayer";
 const Video = ({currentVideo, status, setStatus}) => {
     
     return (
-            <VideoContainer className={`${!status ? 'video-active' : ""}`}>
+        <VideoWrapper  onClick={() => {setStatus(false)}}>
+            <VideoContainer className={`${!status ? 'video-active' : ""}`} onClick={(e) => e.stopPropagation()}>
                 <button onClick={() => {setStatus(false)}}>
                     <FontAwesomeIcon className="close" icon={faClose} />
                 </button>  
@@ -38,10 +39,22 @@ const Video = ({currentVideo, status, setStatus}) => {
                     </Details>
                 </VideoDetailsContainer>              
             </VideoContainer>
+        </VideoWrapper>
     )
 };
 
 //Styles
+const VideoWrapper = styled.div`
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    display: flex;
+    /* justify-content: flex-end; */
+`;
 const VideoContainer = styled.div`
     transform: translateX(-100%);
     transition: all 0.5s ease-in-out;
@@ -78,6 +91,7 @@ const Details = styled.div`
     justify-content: center;
     flex-direction: column;
     .label {
+        margin-left: 2rem;
         padding: .5rem;
     }
     
