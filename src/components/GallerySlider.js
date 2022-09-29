@@ -43,7 +43,7 @@ const GallerySlider = ({ status, setStatus, images, setImages, currentImage, set
     };
 
     return (
-        <SliderStyle /*className={`${!status ? 'slider-active' : ''}`}*/ >
+        <SliderStyle>
             
             <CurrentImage>
                 <LeftArrowStyle onClick={() => imageChangeHandler('prev')}>
@@ -54,7 +54,7 @@ const GallerySlider = ({ status, setStatus, images, setImages, currentImage, set
                 </RightArrowStyle>
                 <ImageBackground src={currentImage.link} alt="artist" />
             </CurrentImage>
-            <DotContainer> 
+            {/* <DotContainer> 
                 {images.map((image) => (
                     <SmallImage
                         key={image.id}
@@ -63,7 +63,7 @@ const GallerySlider = ({ status, setStatus, images, setImages, currentImage, set
                         <img src={image.link} alt="artist" />
                     </SmallImage>
                 ))}
-            </DotContainer>            
+            </DotContainer>             */}
         </SliderStyle>
     )
 }
@@ -75,8 +75,16 @@ const SliderStyle = styled(SliderStyles)`
 `;
 const CurrentImage = styled.div`
     width: 90%;
-    height: 80vh;
+    height: 100vh;
     position: relative;
+    padding: 2rem 0rem 4rem 0rem;
+    
+    @media only screen and (min-width: 768px) {
+        height: 90vh;
+    }
+    @media only screen and (min-width: 992px) {
+        height: 80vh;
+    }
 `;
 const ImageBackground = styled.img`
     width: 100%;
@@ -103,26 +111,26 @@ const RightArrowStyle = styled.div`
     z-index: 1;
     cursor: pointer;
 `;
-const DotContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding-top: 1rem;
-    height: 12rem;
-    width: 60em;
-    overflow-x: auto;
-    flex-wrap: wrap;
-`;
-const SmallImage = styled.div`
-    border: none;
-    width: 12em;
-    height: 100%;
-    padding: 5px;
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-`;
+// const DotContainer = styled.div`
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-evenly;
+//     padding-top: 1rem;
+//     height: 12rem;
+//     width: 60em;
+//     overflow-x: auto;
+//     flex-wrap: wrap;
+// `;
+// const SmallImage = styled.div`
+//     border: none;
+//     width: 12em;
+//     height: 100%;
+//     padding: 5px;
+//     img {
+//         width: 100%;
+//         height: 100%;
+//         object-fit: cover;
+//     }
+// `;
 
 export default GallerySlider;

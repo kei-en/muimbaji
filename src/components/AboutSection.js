@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import logo from '../img/fishbowl.png';
 
 const AboutSection = () => {
     return (
@@ -32,8 +31,9 @@ const AboutSection = () => {
 const About = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 2rem 6rem;
+    padding: 2rem;
     background: #000;
     color: white;
     h2 {
@@ -46,24 +46,24 @@ const About = styled.div`
 `
 const Details = styled.div`
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    
+    flex-direction: column;
+    justify-content: center;
 `;
 const Text = styled.div`
     align-items: center;
     padding: 1rem;
     width: 100%;
-    max-width: 500px;
     p {
         text-align: center;
     }
 `;
 const Image = styled.div`
-    align-items: center;
-    padding: 1rem;
+    margin: 0 2rem;
     img {
-        width: 80%;
+        /* display: block;
+        margin-left: auto;
+        margin-right: auto; */
+        width: 100%;
     }
 `;
 

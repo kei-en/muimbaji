@@ -1,13 +1,19 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import logo from '../img/fishbowl.png';
 import { RiCloseFill } from "react-icons/ri";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { useEffect } from "react";
 
 
 const Nav = () => {
     const [menuStatus, setMenuStatus] = useState(true);
+    const location = useLocation();
+
+    useEffect(() => {
+        setMenuStatus(true);
+    }, [location])
     
     let activeStyle = {
         color: "#A68D60",

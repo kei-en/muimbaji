@@ -38,7 +38,7 @@ const StyledVideoLibrary = styled.div`
     .video-poster {
         cursor: pointer;
         img {
-            width: 100%;
+            width: 80%;
             height: 80%;
         }
     }

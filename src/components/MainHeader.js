@@ -35,10 +35,9 @@ const Header = styled.div`
 `;
 const Title = styled.div`
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
-    margin: 15rem 2rem;
-    width: 40%;
+    margin: 0 2rem 5rem 2rem;
     h2 {
         color: white;
         padding: 1rem;

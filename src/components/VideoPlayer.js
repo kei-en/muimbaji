@@ -80,18 +80,18 @@ function VideoPlayer({ currentVideo }) {
     )
 }
 
-export default VideoPlayer
-
 // Styles 
 const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 64rem;
     width: 100%;
+    max-height: 30.875rem;
     height: 100%;
 `;
 const VideoWrapper = styled.div`
-    min-width: 720px;
+    width: 100%;
     position: relative;
     display: flex;
     justify-content: center;
@@ -107,7 +107,7 @@ const Controls = styled.div`
     position: absolute;
     bottom: 30px;
     padding: 14px;
-    width: 80%;
+    width: 60%;
     max-width: 700px;
     flex-wrap: wrap;
     background: rgba(255, 255, 255, 0.25);
@@ -189,3 +189,5 @@ const MuteButton = styled.button`
         font-size: 20px;
     } 
 `;
+
+export default VideoPlayer;

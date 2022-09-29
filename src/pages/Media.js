@@ -40,36 +40,37 @@ const Media = ({ videos, setVideos, currentVideo, setCurrentVideo, currentImage,
                 </StyledVideo>
             </VideoComponent>          
             <div className={`${pageStatus ? 'inactive' : ''}`}>             
-            <Slider>
-                <div className={`slider ${sliderStatus ? 'slider-active' : ''}`}>    
-                    <button onClick={() => {setSliderStatus(false)}}>
-                        <FontAwesomeIcon className="close" icon={faClose} />
-                    </button>                 
-                    <GallerySlider
-                    images={images}
-                    setImages={setImages}
-                    currentImage={currentImage} 
-                    setCurrentImage={setCurrentImage}
-                    status={sliderStatus}
-                    setStatus={setSliderStatus}
-                    id={currentImage.id}
+                <Slider>
+                    <div className={`slider ${sliderStatus ? 'slider-active' : ''}`}>    
+                        <button onClick={() => {setSliderStatus(false)}}>
+                            <FontAwesomeIcon className="close" icon={faClose} />
+                        </button>                 
+                        <GallerySlider
+                        onClick={(e) => e.stopPropagation()}
+                        images={images}
+                        setImages={setImages}
+                        currentImage={currentImage} 
+                        setCurrentImage={setCurrentImage}
+                        status={sliderStatus}
+                        setStatus={setSliderStatus}
+                        id={currentImage.id}
+                        />
+                    </div>
+                </Slider>     
+                <Images className="fullpage"> 
+                {images.map((image) => ( 
+                    <Gallery 
+                        images={images} 
+                        setImages={setImages} 
+                        currentImage={currentImage} 
+                        setCurrentImage={setCurrentImage}
+                        setSliderStatus={setSliderStatus}
+                        image={image.link}
+                        id={image.id}
+                        key={image.id}
                     />
-                </div>
-            </Slider>     
-            <Images className="fullpage"> 
-            {images.map((image) => ( 
-                <Gallery 
-                    images={images} 
-                    setImages={setImages} 
-                    currentImage={currentImage} 
-                    setCurrentImage={setCurrentImage}
-                    setSliderStatus={setSliderStatus}
-                    image={image.link}
-                    id={image.id}
-                    key={image.id}
-                />
-            ))}
-            </Images>
+                ))}
+                </Images>
             </div>
         </StyledMedia>
     )
@@ -115,11 +116,10 @@ const VideoComponent = styled.div`
 `;
 const StyledVideo = styled.div`
     padding: 5rem 2rem;
-    height: 70vh;
+    height: 90vh;
     overflow: scroll;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px,1fr));
-    grid-column-gap: 2rem;
     grid-row-gap: 5rem;
     
 `; 
@@ -143,22 +143,24 @@ const Slider = styled(SliderStyles)`
     position: relative;
     z-index: 4;
     .slider {        
-        display: none;
         width: 100%;
+        display: none;
         background: #131313e3;
         position: absolute;
         transition: .5s all ease;
         button {
-            background: none;
+            background: #ffffff44;
             border: none;
             outline: none;
-            width: 30px;
-            height: 30px;
+            text-align: end;
+            width: 100%;
+            height: 40px;
             cursor: pointer;
         }     
     }
     .slider-active {
         display: flex;
+        flex-direction: column;
     }
 `;
 

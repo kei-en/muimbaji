@@ -9,7 +9,7 @@ const Video = ({currentVideo, status, setStatus}) => {
     return (
         <VideoWrapper  onClick={() => {setStatus(false)}}>
             <VideoContainer className={`${!status ? 'video-active' : ""}`} onClick={(e) => e.stopPropagation()}>
-                <button onClick={() => {setStatus(false)}}>
+                <button className="btn" onClick={() => {setStatus(false)}}>
                     <FontAwesomeIcon className="close" icon={faClose} />
                 </button>  
                 <VideoDetailsContainer>
@@ -53,14 +53,13 @@ const VideoWrapper = styled.div`
     background: rgba(0, 0, 0, 0.2);
     z-index: 100;
     display: flex;
-    /* justify-content: flex-end; */
 `;
 const VideoContainer = styled.div`
     transform: translateX(-100%);
     transition: all 0.5s ease-in-out;
     opacity: 0;
     background: #231f20;
-    width: 80%;
+    width: 100%;
     color: #f0f0f0;
     position: fixed;
     height: 100vh;
@@ -70,7 +69,9 @@ const VideoContainer = styled.div`
         transform: translateX(0%);
         opacity: 1;
     }
-    button {
+    .btn {
+        margin-left: 90%;
+        text-align: start;
         border: none;
         &:hover {
             background: transparent;
@@ -79,6 +80,9 @@ const VideoContainer = styled.div`
             width: 2rem;
             height: 2rem;
         }
+    }
+    @media only screen and (min-width: 768px) {
+        width: 80%;
     }
 `;
 const VideoDetailsContainer = styled.div`
