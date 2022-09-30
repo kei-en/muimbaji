@@ -29,38 +29,7 @@ const LatestReleases = () => {
                     <p>tiger theatre vol. 2</p>
                 </Release>
             </Releases>
-            <OtherReleases />
         </div>
-    )
-};
-
-const OtherReleases = () => {
-    return (
-        <Releases2Container>
-            <h3>Other Releases</h3>
-            <Releases2>
-                <Release2>
-                    <img src={nextTime} alt="music cover" />
-                    <p>next time</p>
-                    <button>Listen</button>
-                </Release2>
-                <Release2>
-                    <img src={energyTrap} alt="music cover" />
-                    <p>energy trap</p>
-                    <button>Listen</button>
-                </Release2>
-                <Release2>
-                    <img src={theJoyOf} alt="music cover" />
-                    <p>the joy of</p>
-                    <button>Listen</button>
-                </Release2>
-                <Release2>
-                    <img src={unworried} alt="music cover" />
-                    <p>unworried</p>
-                    <button>Listen</button>
-                </Release2>
-            </Releases2>
-        </Releases2Container>
     )
 };
 
@@ -75,15 +44,17 @@ const Title = styled.div`
 const Releases = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
     padding: 0rem 4rem;
 `;
 
 const Release = styled.div`
+    margin: auto;
     img {
-        height: 20rem;
-        width: 20rem;
+        height: 15rem;
+        width: 15rem;
         object-fit: cover;
     }
     p {
@@ -94,42 +65,42 @@ const Release = styled.div`
     }
 `;
 
-const Releases2Container = styled.div`
-    padding: 0.5rem 2rem;
-    h3 {
-        text-transform: uppercase;
-    }
-`;
+// const Releases2Container = styled.div`
+//     padding: 0.5rem 2rem;
+//     h3 {
+//         text-transform: uppercase;
+//     }
+// `;
 
-const Releases2 = styled.div`
-    display: flex;
-    flex-direction: row;
-    margin: 2rem;
-`;
+// const Releases2 = styled.div`
+//     display: flex;
+//     flex-direction: row;
+//     margin: 2rem;
+// `;
 
-const Release2 = styled.div`
-    width: 12rem;
-    height: 12rem;
-    padding: 1rem;
-    position: relative;
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    p {
-        position: absolute;
-        top: 25%;
-        left: 20%;
-        color: white;
-        font-weight: bold;
-    }
-    button {
-        position: absolute;
-        top: 45%;
-        left: 25%;
-        padding: .5rem 1rem;
-    }
-`;
+// const Release2 = styled.div`
+//     width: 12rem;
+//     height: 12rem;
+//     padding: 1rem;
+//     position: relative;
+//     img {
+//         width: 100%;
+//         height: 100%;
+//         object-fit: cover;
+//     }
+//     p {
+//         position: absolute;
+//         top: 25%;
+//         left: 20%;
+//         color: white;
+//         font-weight: bold;
+//     }
+//     button {
+//         position: absolute;
+//         top: 45%;
+//         left: 25%;
+//         padding: .5rem 1rem;
+//     }
+// `;
 
 export default LatestReleases;

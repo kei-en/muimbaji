@@ -6,11 +6,12 @@ import AboutSection from "../components/AboutSection";
 import EventsSection from "../components/EventsSection";
 import { motion } from 'framer-motion';
 import { pageAnimation } from "../animation";
+import styled from "styled-components";
 
 const Home = ({videos, currentVideo}) => {
 
     return (
-        <motion.div
+        <StyledHome
             variants={pageAnimation}
             initial="hidden"
             animate="show"
@@ -21,8 +22,12 @@ const Home = ({videos, currentVideo}) => {
             <VideosSection currentVideo={currentVideo} videos={videos} />
             <EventsSection />
             <LatestReleases />
-        </motion.div>
+        </StyledHome>
     )
-}
+};
+
+const StyledHome = styled(motion.div)`
+    overflow: hidden;
+`
 
 export default Home;

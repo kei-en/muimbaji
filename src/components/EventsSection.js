@@ -54,7 +54,7 @@ const EventsOuter = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 500px;
+  /* min-width: 500px; */
   padding: 2rem 0rem;
   h2 {
     padding: 2rem;
@@ -67,11 +67,16 @@ const Events = styled.div`
 
 `;
 const Event = styled.div`
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     position: relative;
     padding: 1rem 0rem;
+    border-bottom: 1px #222 solid;
+    @media only screen and (min-width: 600px) {
+        flex-direction: row;
+    }
     p {
         flex: 3;
         font-size: 1.1rem;

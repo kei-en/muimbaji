@@ -110,6 +110,7 @@ const NavStyled = styled.div`
     position: fixed;
     top: 4.5rem;
     background: linear-gradient(to right, rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%);
+    transition: 0.5s ease-in-out;
     a {
         color: #F2F2F2;
         text-decoration: none;

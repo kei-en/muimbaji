@@ -10,11 +10,9 @@ const VideosSection = ({currentVideo, videos}) => {
         <>
             <VideosContainer>
                 <h2>New Video</h2>
-                <Video>
-                    <VideoPlayer currentVideo={videos[0]} />
-                    <Link to="/media">more videos</Link>
-                </Video>
+                <VideoPlayer currentVideo={videos[0]} />
                 <Hidden />
+                <Link to="/media">more videos</Link>
             </VideosContainer>
         </>
     )
@@ -26,7 +24,6 @@ const VideosContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 90vh;
     background: #000;
     color: #fff;
     h2 {
@@ -39,9 +36,11 @@ const VideosContainer = styled.div`
         text-decoration: none;
         padding: .8rem 1.5rem;
         margin: 2rem;
+        margin-top: 4rem;
         color: #000;
         border: 1px solid #000;
         transition: 0.3s ease-in-out;
+        z-index: 2;
         &:hover {
             background-color: #45C4B0;
             color: white;
@@ -53,7 +52,7 @@ const Video = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 90%;
     z-index: 2;    
 `;
 const Hidden = styled.div`

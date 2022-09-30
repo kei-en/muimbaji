@@ -7,6 +7,7 @@ import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import Music from "./pages/Music";
 import Media from "./pages/Media";
+import Newsletter from "./components/Newsletter";
 
 function App() {
   const location = useLocation();
@@ -85,6 +86,7 @@ function App() {
             currentVideo={currentVideo} />} />
         </Routes>
       </AnimatePresence>
+      <Newsletter />
       <audio 
         onLoadedMetadata={timeUpdateHandler} 
         onTimeUpdate={timeUpdateHandler} 

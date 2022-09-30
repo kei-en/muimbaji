@@ -26,6 +26,10 @@ function VideoPlayer({ currentVideo }) {
     const animTrack = {
         transform: `translate(${playerState.animationPercentage}%)`   
     }
+
+    const hoverEffect = () => {
+        
+    } 
     
     return (
         <Container>
@@ -85,17 +89,23 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 64rem;
+    /* max-width: 64rem; */
+    padding: 1rem;
     width: 100%;
-    max-height: 30.875rem;
     height: 100%;
+    z-index: 2;
 `;
 const VideoWrapper = styled.div`
-    width: 100%;
+    /* width: 100%; */
     position: relative;
     display: flex;
     justify-content: center;
-    overflow: hidden;
+    video {
+        width: 100%;
+    }
+    @media only screen and (min-width: 992px) {
+        overflow: hidden;
+    }
     &:hover .controls {
         transform: translateY(0%);
     }
@@ -106,21 +116,26 @@ const Controls = styled.div`
     justify-content: space-evenly;
     position: absolute;
     bottom: 30px;
-    padding: 14px;
-    width: 60%;
+    padding: 0.5rem;
+    /* padding: 14px; */
+    width: 80%;
     max-width: 700px;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     background: rgba(255, 255, 255, 0.25);
     box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    transform: translateY(150%);
-    transition: all 0.3s ease-in-out;
+    @media only screen and (min-width: 992px) {
+        transform: translateY(150%);
+        transition: all 0.3s ease-in-out;
+
+    }
 `;
 const Actions = styled.div`
     button {
+        padding: 5px;
         background: none;
         border: none;
         outline: none;
@@ -136,7 +151,7 @@ const TimeControl = styled.div`
     width: 50%;
     display: flex;
     p {
-        padding: 0.5rem;
+        padding: 2px;
         color: #ffffff;
         font-size: 0.9rem;
     }
@@ -183,6 +198,7 @@ const MuteButton = styled.button`
     border: none;
     outline: none;
     cursor: pointer;
+    padding: 5px;
     .icon {
         background-color: none;
         color: white;
