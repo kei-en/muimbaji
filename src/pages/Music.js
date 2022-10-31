@@ -19,7 +19,7 @@ const Music = ({ songs, setCurrentSong, audioRef, isPlaying, setIsPlaying, setSo
                 songs={songs}
                 setSongs={setSongs}
                 />
-                <MusicSideBar currentSong={currentSong}/>
+                {/* <MusicSideBar currentSong={currentSong}/> */}
             </StyledMusic>
             <Player
                 audioRef={audioRef}
@@ -37,6 +37,10 @@ const Music = ({ songs, setCurrentSong, audioRef, isPlaying, setIsPlaying, setSo
 }
 
 //Styles
+// const MusicContainer = styled.div`
+//     display: flex;
+//     flex-direction: column;
+// `;
 const StyledMusic = styled(motion.div)`
   display: flex;
   justify-content: space-around;

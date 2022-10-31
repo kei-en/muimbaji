@@ -16,18 +16,20 @@ const Song = ({currentSong}) => {
 //Styles
 const SongContainer = styled.div`
     height: 10px;
-    width: 20%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     img {
         width: 18%;
         object-fit: cover;
+        display: none;
     }
 `;
 const SongDescription = styled.div`
     padding: 10px;
     color: #f0f0f0;
+    width: 100%;
     h4 {
         font-size: 90%;
     }

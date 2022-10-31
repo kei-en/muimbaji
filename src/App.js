@@ -86,7 +86,7 @@ function App() {
             currentVideo={currentVideo} />} />
         </Routes>
       </AnimatePresence>
-      <Newsletter />
+      {/* <Newsletter /> */}
       <audio 
         onLoadedMetadata={timeUpdateHandler} 
         onTimeUpdate={timeUpdateHandler} 

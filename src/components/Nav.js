@@ -73,9 +73,11 @@ const NavContainer = styled.div`
     right: 0;
     height: 4.5rem;
     h1 {
-        margin-right: auto;
+        /* margin-right: auto;
         margin-left: auto;
-        width: auto;
+        width: auto; */
+        width: 50%;
+        text-align: center;
     }
     img {
         max-height: 4rem;
@@ -104,9 +106,9 @@ const NavStyled = styled.div`
     flex-direction: row;
     margin: auto;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     padding: 1rem 0rem;
-    z-index: 10;
+    z-index: 100;
     position: fixed;
     top: 4.5rem;
     background: linear-gradient(to right, rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 100%);

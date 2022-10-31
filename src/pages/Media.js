@@ -115,9 +115,10 @@ const VideoComponent = styled.div`
     }
 `;
 const StyledVideo = styled.div`
-    padding: 5rem 2rem;
+    padding: 5rem 1rem;
     height: 90vh;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px,1fr));
     grid-row-gap: 5rem;
@@ -131,7 +132,7 @@ const Images = styled.div`
     grid-row-gap: 1rem;
     position: relative;
     padding: 1rem;
-    height: 70vh;
+    height: 80vh;
     overflow: scroll;
     img {
         width: 100%;

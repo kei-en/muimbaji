@@ -63,14 +63,15 @@ const VideoContainer = styled.div`
     color: #f0f0f0;
     position: fixed;
     height: 100vh;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
     padding-top: 5rem;
     .video-active {
         transform: translateX(0%);
         opacity: 1;
     }
     .btn {
-        margin-left: 90%;
+        margin-left: 80%;
         text-align: start;
         border: none;
         &:hover {
