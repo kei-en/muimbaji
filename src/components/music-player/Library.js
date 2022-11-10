@@ -50,6 +50,11 @@ const Container = styled.div`
     .inactive {
         display: none;
     }
+    @media only screen and (min-width: 768px) {
+        width: 100%;
+        flex-direction: row;
+        height: 95vh;
+    }
 `;
 const Titles = styled.div`
     display: inline-flex;
@@ -60,20 +65,26 @@ const Titles = styled.div`
         padding: .5rem;
         cursor: pointer;
     }
+    @media only screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+    }
 `;
 const StyledLibrary = styled.div`
     background: #0D0D0D;
     padding: 0rem 1rem;
     color: #f0f0f0;
-    /* display: flex;
-    padding: 6rem 4rem 2rem;
-    flex-direction: column;
-    width: 70%;
-    height: 90vh;
-    overflow: scroll;
-    h2 {
-        padding: 2rem;
-    } */
+    @media only screen and (min-width: 768px) {
+        display: flex;
+        padding: 6rem 4rem 2rem;
+        flex-direction: column;
+        width: 70%;
+        overflow: scroll;
+        h2 {
+            padding: 2rem;
+        }        
+    }
 `;
 const LibrarySongs = styled.div`
     /* min-width: 60%; */

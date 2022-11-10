@@ -38,8 +38,8 @@ const StyledVideoLibrary = styled.div`
     .video-poster {
         cursor: pointer;
         img {
-            width: 80%;
-            height: 80%;
+            width: 75%;
+            height: 75%;
         }
     }
 `

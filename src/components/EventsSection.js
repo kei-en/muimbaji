@@ -58,6 +58,7 @@ const EventsOuter = styled.div`
   padding: 2rem 0rem;
   h2 {
     padding: 2rem;
+    text-align: center;
   }
 `;
 const Events = styled.div`

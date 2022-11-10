@@ -14,28 +14,30 @@ const MusicSideBar = ({ currentSong }) => {
                 </CoverImage>
             </SideBarHead>
             <SongDescription>
-                    <Links>
-                        <h3>Available on</h3>
-                        <Container>                            
-                            <a href="#" className='button'>
-                                <img src="https://chillhop.com/wp-content/themes/chillhop/assets/images/streams/spotify.svg" alt="spotify" />
-                            </a>
-                            <a href="#" className='button'>
-                                <img src="https://chillhop.com/wp-content/themes/chillhop/assets/images/streams/apple-music.svg" alt="apple music" />
-                            </a>
-                            <a href="#" className='button'>
-                                <img src="https://chillhop.com/wp-content/themes/chillhop/assets/images/streams/bandcamp.svg" alt="bandcamp" />
-                            </a>
-                            <a href="#" className='button'>
-                                <img src="https://chillhop.com/wp-content/themes/chillhop/assets/images/streams/youtube.svg" alt="youtube" />
-                            </a>
-                            <a href="#" className='button'>
-                                <img src="https://chillhop.com/wp-content/themes/chillhop/assets/images/streams/deezer.svg" alt="deezer" />
-                            </a>
-                        </Container>
-                    </Links>
-                <h3>Written, Produced, Performed, Mixed by</h3>
-                <p>{currentSong.writer}, {currentSong.producer}, {currentSong.mixer}</p>
+                <Links>
+                    <h3>Available on</h3>
+                    <Container>                            
+                        <a href="#" className='button'>
+                            <img src="https://chillhop.com/wp-content/themes/chillhop/assets/images/streams/spotify.svg" alt="spotify" />
+                        </a>
+                        <a href="#" className='button'>
+                            <img src="https://chillhop.com/wp-content/themes/chillhop/assets/images/streams/apple-music.svg" alt="apple music" />
+                        </a>
+                        <a href="#" className='button'>
+                            <img src="https://chillhop.com/wp-content/themes/chillhop/assets/images/streams/bandcamp.svg" alt="bandcamp" />
+                        </a>
+                        <a href="#" className='button'>
+                            <img src="https://chillhop.com/wp-content/themes/chillhop/assets/images/streams/youtube.svg" alt="youtube" />
+                        </a>
+                        <a href="#" className='button'>
+                            <img src="https://chillhop.com/wp-content/themes/chillhop/assets/images/streams/deezer.svg" alt="deezer" />
+                        </a>
+                    </Container>
+                </Links>
+                <div>
+                    <h3>Written, Produced, Performed, Mixed by</h3>
+                    <p>{currentSong.writer}, {currentSong.producer}, {currentSong.mixer}</p>
+                </div>
             </SongDescription>
         </SideBar>
     )
@@ -86,6 +88,9 @@ const SongDescription = styled.div`
         padding: 1rem;
         font-size: 1.1rem;
     }
+    @media only screen and (min-width: 768px) {
+        display: flex;
+    }
 `;
 const Links = styled.div`
     display: flex;
@@ -93,8 +98,12 @@ const Links = styled.div`
     align-items: center;
     background: #f0f0f06c;
     color: #222;
+    border-radius: 1rem;
     h3 {
         font-size: 1.2rem;
+    }
+    @media only screen and (min-width: 768px) {
+        width: 100%;
     }
 `;
 const Container = styled.div`
