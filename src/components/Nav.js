@@ -67,17 +67,22 @@ const NavContainer = styled.div`
     flex-direction: row;
     background: linear-gradient(to right, rgba(0,0,0,0), rgba(35,35,35,0.85),rgba(0,0,0,0));;
     position: fixed;
-    z-index: 10;
+    z-index: 50;
     top: 0;
     left: 0;
     right: 0;
     height: 4.5rem;
     h1 {
         /* margin-right: auto;
-        margin-left: auto;
+        margin-left: auto;media only screen and (min-width: 992px)
         width: auto; */
         width: 50%;
         text-align: center;
+        @media only screen and (min-width: 768px) {
+            width: auto;
+            margin-right: auto;
+            margin-left: auto;
+        }
     }
     img {
         max-height: 4rem;

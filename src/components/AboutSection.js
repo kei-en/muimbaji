@@ -17,7 +17,7 @@ const AboutSection = () => {
                     stop making the goddamn funeral pyres and jumping in the middle of them. 
                     We pick up a few more people that remember, every generation.
                 </p>
-                <img src="https://assets.website-files.com/62a0048933468e34e8d05841/62a1dd52bc8cea3f58c431ee_1.jpg" alt="fishbowl" />
+                <img src="row-3-column-3(1).png" alt="fishbowl" />
             </Details>
         </About>
     )
@@ -54,6 +54,7 @@ const Details = styled.div`
         margin-left: auto;
         margin-right: auto;
         width: 70%;
+        height: 70%;
     }
     @media only screen and (min-width: 768px) {
         display: grid;

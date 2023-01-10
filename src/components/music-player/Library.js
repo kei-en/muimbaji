@@ -53,7 +53,7 @@ const Container = styled.div`
     @media only screen and (min-width: 768px) {
         width: 100%;
         flex-direction: row;
-        height: 95vh;
+        height: 96vh;
     }
 `;
 const Titles = styled.div`
@@ -61,6 +61,9 @@ const Titles = styled.div`
     background: #0D0D0D;
     color: #f0f0f0;
     padding: 8rem 1rem 1rem;
+    .active {
+        border-bottom: 3px solid #3b3a3a;
+    }
     h3 {
         padding: .5rem;
         cursor: pointer;

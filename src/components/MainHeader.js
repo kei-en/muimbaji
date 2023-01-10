@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import HeaderImg from '../img/jamaal-cooks-40NZJF2d4qA-unsplash.jpg';
+import HeaderImg from '../img/row-3-column-1(2).png';
 import { motion } from "framer-motion";
 import { fade, titleAnim } from "../animation";
 import { Hide } from "../styles";
@@ -30,6 +30,7 @@ const Header = styled.div`
         width: 100%;
         height: 100vh;
         object-fit: cover;
+        /* object-position: 100% 20%; */
         z-index: 0;
     }
 `;

@@ -46,28 +46,35 @@ const MusicSideBar = ({ currentSong }) => {
 
 //Styles
 const SideBar = styled.div`
-    height: 85vh;
+    height: 80vh;
     width: 100%;
     overflow: scroll;
     background: #222;
-    /* display: none; */
+    display: flex;
+    flex-direction: column;
 `;
 const SideBarHead = styled.div`
     padding: 4rem 1rem 1rem;
 `;
 const CoverImage = styled.div`
     position: relative;
-    width: 100%;
-    width: auto;
+    overflow-x: hidden;
     img {
         height: 40vh;
         width: 100%;
-        object-fit: coverSX;
+        @media only screen and (min-width: 768px) {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            height: 50vh;
+        }
+        object-fit: fill;
     }
 `;
 const SongTitle = styled.div`
     position: absolute;
-    left: 0;
+    left: 25%;
     bottom: 0;
     padding: 1rem;
     width: 100%;
@@ -103,7 +110,8 @@ const Links = styled.div`
         font-size: 1.2rem;
     }
     @media only screen and (min-width: 768px) {
-        width: 100%;
+        width: 50%;
+        margin: 0 4rem;
     }
 `;
 const Container = styled.div`

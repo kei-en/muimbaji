@@ -4,7 +4,6 @@ import { faPlay, faStepBackward, faStepForward, faPause, faVolumeHigh, faVolumeX
 import styled from "styled-components";
 import Song from "./Song";
 import MusicSideBar from "./MusicSideBar";
-import { Container } from "postcss";
 
 const Player = ({audioRef, isPlaying, setIsPlaying, setSongInfo, songInfo, songs, setCurrentSong, currentSong, setSongs}) => {    
     const [details, setDetails] = useState(false);
@@ -181,6 +180,9 @@ const TimeControl = styled.div`
         background: transparent;
         border: none;
     }
+    @media only screen and (min-width: 768px) {
+        display: flex;
+    }
 `;
 const PlayControl = styled.div`
     display: flex;
@@ -204,6 +206,9 @@ const Track = styled.div`
     width: 50%;
     align-self: center;
     display: none;
+    @media only screen and (min-width: 768px) {
+        display: flex;
+    }
 `;
 const AnimateTrack = styled.div`
     background: #333333;
@@ -215,14 +220,22 @@ const AnimateTrack = styled.div`
     transform: translateX(0%); 
     pointer-events: none;
     display: none;
+    @media only screen and (min-width: 768px) {
+        display: flex;
+    }
 
 `;
 const StyledVolume = styled.div`
     width: 20%;
-    display: flex;
     justify-content: space-evenly;
     color: #f0f0f0;
     display: none;
+    input {
+        width: 70%;
+    }
+    @media only screen and (min-width: 768px) {
+        display: flex;
+    }
 
 `;
 
