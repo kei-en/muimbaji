@@ -1,8 +1,63 @@
-# Getting Started with Create React App
+# Muimbaji
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+This project is a web app that showcases a music artist's work. It has four pages:
+
+- **Intro:** Features the artist's latest work, an about section with information about the artist, and a section for upcoming events with dates and links.
+    <p align="start">
+    <img src="./public/muimbaji-intro-1.gif"
+        alt="hbnb logo"
+        width="300"
+        style="padding: 10px"
+    >
+    <img src="./public/muimbaji-intro-2.gif"
+        alt="hbnb logo"
+        width="300"
+        style="padding: 10px; margin-left: 5rem;"
+    >
+    </p>
+- **Music:** Contains the artist's discography, including tracks and albums. Songs can be played using the custom audio player at the bottom of the page. More information about songs can be discovered by expanding the player.
+    <p align="start">
+    <img src="./public/muimbaji-music.gif"
+        alt="hbnb logo"
+        width="300"
+        style="padding: 10px"
+    >
+    </p>
+- **Gallery:** Showcases music videos by the artist in the videos section and an image gallery with images related to the artist.
+    <p align="start">
+    <img src="./public/muimbaji-video.gif"
+        alt="hbnb logo"
+        width="300"
+        style="padding: 10px"
+    >
+    <img src="./public/muimbaji-image.gif"
+        alt="hbnb logo"
+        width="300"
+        style="padding: 10px; margin-left: 5rem;"
+    >
+    </p>
+- **Shop:** Links to the Muimbaji store, an ecommerce page linked with Strapi that showcases merchandise on sale by the artist.
+    <p align="start">
+    <img src="./public/muimbaji-shop.gif"
+        alt="hbnb logo"
+        width="300"
+        style="padding: 10px"
+    >
+    </p>
+
+Check out the deployed site [here](https://muimbaji.vercel.app)
+
+## Installation
+
+Here are the steps to install this project:
+
+1. Clone the repository: `git clone https://github.com/username/repository.git`
+2. Navigate into the directory: `cd repository`
+3. Install the dependencies: `npm install`
+
+## Usage
 
 In the project directory, you can run:
 
@@ -17,7 +72,6 @@ You may also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -27,44 +81,14 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Related Projects
 
-### `npm run eject`
+- [store](https://github.com/kei-en/store): Contains code that implements the eshop in this web app
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Author
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Karanja J Njuguna** - <[kei-en](https://github.com/kei-en)>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## License
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
