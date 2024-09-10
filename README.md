@@ -6,15 +6,10 @@ This project is a web app that showcases a music artist's work. It has four page
 
 - **Intro:** Features the artist's latest work, an about section with information about the artist, and a section for upcoming events with dates and links.
     <p align="start">
-    <img src="./public/muimbaji-intro-1.gif"
-        alt="hbnb logo"
+    <img src="./public/homepage-mobile.webp"
+        alt="muimbaji intro page"
         width="300"
         style="padding: 10px"
-    >
-    <img src="./public/muimbaji-intro-2.gif"
-        alt="hbnb logo"
-        width="300"
-        style="padding: 10px; margin-left: 5rem;"
     >
     </p>
 - **Music:** Contains the artist's discography, including tracks and albums. Songs can be played using the custom audio player at the bottom of the page. More information about songs can be discovered by expanding the player.
@@ -27,21 +22,21 @@ This project is a web app that showcases a music artist's work. It has four page
     </p>
 - **Gallery:** Showcases music videos by the artist in the videos section and an image gallery with images related to the artist.
     <p align="start">
-    <img src="./public/muimbaji-video.gif"
-        alt="hbnb logo"
+    <img src="./public/videopage-mobile.webp"
+        alt="muimbaji video page"
         width="300"
         style="padding: 10px"
     >
-    <img src="./public/muimbaji-image.gif"
-        alt="hbnb logo"
+    <img src="./public/imagepage-mobile.webp"
+        alt="muimbaji images page"
         width="300"
         style="padding: 10px; margin-left: 5rem;"
     >
     </p>
 - **Shop:** Links to the Muimbaji store, an ecommerce page linked with Strapi that showcases merchandise on sale by the artist.
     <p align="start">
-    <img src="./public/muimbaji-shop.gif"
-        alt="hbnb logo"
+    <img src="./public/shoppage-mobile.webp"
+        alt="muimbaji shop page"
         width="300"
         style="padding: 10px"
     >
