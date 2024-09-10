@@ -14,8 +14,8 @@ This project is a web app that showcases a music artist's work. It has four page
     </p>
 - **Music:** Contains the artist's discography, including tracks and albums. Songs can be played using the custom audio player at the bottom of the page. More information about songs can be discovered by expanding the player.
     <p align="middle">
-    <img src="./public/muimbaji-music.gif"
-        alt="hbnb logo"
+    <img src="./public/musicpage-mobile.webp"
+        alt="muimbaji music page"
         width="300"
         style="padding: 10px"
     >
