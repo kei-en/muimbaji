@@ -89,3 +89,15 @@ Your app is ready to be deployed!
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+## Related Projects
+
+- [store](https://github.com/kei-en/store): Contains code that implements the eshop in this web app
+
+## Author
+
+- **Karanja J Njuguna** - <[kei-en](https://github.com/kei-en)>
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
